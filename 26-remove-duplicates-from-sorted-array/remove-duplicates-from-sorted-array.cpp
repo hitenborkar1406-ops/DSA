@@ -1,0 +1,29 @@
+// class Solution {
+// public:
+//     int removeDuplicates(vector<int>& nums) {
+//         int s = nums.size() ;
+//         vector<int> temp ;
+//         int i = 0 ;
+//         for ( int j = 1 ; i < s ; j++) {
+//             if ( nums[j] != nums[i] ) {
+//                 nums[++i] = nums[j] ;
+//             }
+//         }
+//         return i + 1 ;
+//     }
+// };
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int i = 0;
+
+        for (int j = 1; j < nums.size(); j++) {
+            if (nums[j] != nums[i]) {
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+
+        return i + 1;
+    }
+};
