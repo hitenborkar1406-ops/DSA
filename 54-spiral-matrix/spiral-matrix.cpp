@@ -1,3 +1,11 @@
+// 3. Remember the indexing pattern
+// Direction	Matrix access
+// Top row → right	matrix[top][j]
+// Right column ↓	matrix[j][right]
+// Bottom row ←	matrix[bottom][j]
+// Left column ↑	matrix[j][left]
+// The key rule is that the row index comes first, and the column index comes second.
+
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
