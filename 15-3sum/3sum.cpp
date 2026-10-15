@@ -1,4 +1,50 @@
 
+// class Solution {
+// public:
+//     vector<vector<int>> threeSum(vector<int>& nums) {
+//         vector<vector<int>> result;
+//         int n = nums.size();
+
+//         // Stores unique triplets in sorted order to avoid duplicates
+//         set<vector<int>> uniqueTriplets;
+
+//         // Fix the first element of the triplet
+//         for (int i = 0; i < n; i++) {
+
+//             // Map stores the numbers we have already visited
+//             unordered_map<int, int> seen;
+
+//             // Select the second element
+//             for (int j = i + 1; j < n; j++) {
+
+//                 // Calculate the third number needed to make sum 0
+//                 int third = -(nums[i] + nums[j]);
+
+//                 // Check whether the required third number was seen
+//                 if (seen.find(third) != seen.end()) {
+
+//                     // Sort the triplet so different orders look identical
+//                     vector<int> triplet = {nums[i], nums[j], third};
+//                     sort(triplet.begin(), triplet.end());
+
+//                     // Set automatically prevents duplicate triplets
+//                     uniqueTriplets.insert(triplet);
+//                 }
+
+//                 // Store the current number for future lookups
+//                 seen[nums[j]] = 1;
+//             }
+//         }
+
+//         // Convert the set of unique triplets into the result vector
+//         for (auto triplet : uniqueTriplets) {
+//             result.push_back(triplet);
+//         }
+
+//         return result;
+//     }
+// };
+
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
